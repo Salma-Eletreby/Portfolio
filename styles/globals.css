@@ -1,42 +1,33 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --bkg: #F5EFFF;
+  --menu: #E5D9F2;
+  --primary: #CDC1FF;
+  --secondary: #A294F9;
+  --text: #1C132C;
+  --nav: #1C132C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark mode overrides */
+.dark-theme {
+  --background: #1C132C;
+  --bkg: #1C132C;
+  --menu: #3D2C5F;
+  --primary: #5E4B8C;
+  --secondary: #A294F9;
+  --text: #ffffff;
+  --nav: linear-gradient( #1C132C,rgba(255, 255, 255,0.6));
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*,
+*::before,
+*::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body{
+  background-color: var(--background);
 }
