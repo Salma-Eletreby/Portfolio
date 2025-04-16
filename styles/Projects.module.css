@@ -1,0 +1,116 @@
+.projectsBanner {
+  color: #f5efff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/banner-pics/projects-banner.avif");
+  margin-top: -0.5em;
+  height: 13em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectsBannerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+.projectsBannerText h5,
+.projectsBannerText h6 {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.projectsBannerText h6 {
+  max-width: 50%;
+}
+
+.filters{
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em;
+}
+
+.searchParam{
+  width: 20em;
+  height: 2em;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: var(--menu);
+  border: none;
+  transition: border-color 0.3s ease;
+  color: var(--text);
+} 
+
+.projects{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.project{
+  width: 10em;
+  height: 10em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f5efff;
+  text-align: center;
+  border-radius: 2em;
+}
+
+.project button{
+  width: 7em;
+  margin: 1em;
+  border-radius: 10px;
+  padding: 0.3em;
+  border: none;
+  background-color: var(--primary);
+  color: var(--text);
+  transition: 3ms;
+}
+
+.project button:hover {
+  background-color: var(--secondary);
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  transition: 3ms;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .projectsBanner {
+    height: 15em;
+  }
+  .projectsBannerText h4,
+  .projectsBannerText h5,
+  .projectsBannerText h6 {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .projectsBanner{
+    height: 20em;
+  }
+
+  .projectsBannerText h4,
+  .projectsBannerText h5,
+  .projectsBannerText h6 {
+    font-size: 1.5em;
+  }
+}

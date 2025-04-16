@@ -1,0 +1,151 @@
+.projectWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  gap: 1em;
+  min-height: 73vh;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.desc {
+  color: var(--text);
+  text-align: center;
+}
+
+.toggleBtn {
+  background-color: var(--primary);
+  color: var(--text);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1 0 180px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+.toggleBtn:hover {
+  background-color: var(--secondary);
+}
+
+.section {
+  background-color: var(--menu);
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: var(--text);
+}
+
+.section li {
+  margin-left: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.imageItem {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imageItem img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tabsContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Optional - Highlight active */
+.toggleBtn:focus,
+.toggleBtn:active {
+  outline: 2px solid var(--secondary);
+}
+
+/* Animation for gallery fade-in */
+.fadeIn {
+  animation: fadeInAnim 0.6s ease-in;
+}
+
+@keyframes fadeInAnim {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.imageHover {
+  transition: transform 0.3s ease;
+}
+
+.imageHover:hover {
+  transform: scale(1.05);
+}
+
+.links {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.links a {
+  color: var(--secondary);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.keywords p {
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px; /* pill shape */
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.keywords p:hover {
+  background-color: var(--primary);
+  color: var(--text);
+  transform: scale(1.05);
+}
