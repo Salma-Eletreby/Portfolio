@@ -48,6 +48,7 @@
   font-size: 1.3em;
   line-height: 1.5em;
   color: var(--text);
+  width: 90%;
 }
 
 .section li {

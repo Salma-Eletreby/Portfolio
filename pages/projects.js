@@ -1,122 +1,133 @@
 import styles from "@/styles/Projects.module.css";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const projects = [
   {
     id: 15,
     name: "CephaloMastery",
     lang: ["PHP", "SQL", "Python", "JavaScript", "CSS"],
-    desc: "Create a Moodle (LMS) plugin that allows dentistry to proffesors to upload pictures to create questions using an ML model",
+    desc: "Create a Moodle (LMS) plugin that allows dentistry professors to upload pictures to create questions using an ML model",
     thumbnail: "thumbnails/CephaloMastery.png",
     route: "/projects/project_15",
-    libraries: ["YOLO","numpy","Flask","tensorflow"],
-    repo: "https://github.com/Salma-Eletreby/CephaloMastery.git",
-    overview: "",
-    features: "",
-    challenges: [["challenge","solution"],["challenge","solution"]]
   },
   {
     id: 14,
     name: "LingoSnacks",
     lang: ["Kotlin", "Firebase"],
     desc: "Modify a provided template app to use Firebase and local storage to store data",
+    route: "/projects/project_14",
     thumbnail: "thumbnails/LingoSnacks.png",
   },
   {
     id: 13,
     name: "Learning Package Editor App",
     lang: ["Kotlin"],
-    desc: "An andorid application that allows users to create flashcard sets for student users to learn new vocabulary",
+    desc: "An Android application that allows users to create flashcard sets for student users to learn new vocabulary",
+    route: "/projects/project_13",
     thumbnail: "thumbnails/Learning Package Editor App.png",
   },
   {
     id: 12,
     name: "Query Cost Estimator",
     lang: ["MySQL", "Java", "Swing"],
-    desc: "Java Swing application connected to MySQL to estimate the cost of SELECT (primary/non-primary key, equality/range) and equi-JOIN queries by exploring execution plans based on stored table metadata and statistics.",
+    desc: "Java Swing application connected to MySQL to estimate query cost based on execution plans.",
+    route: "/projects/project_12",
     thumbnail: "thumbnails/Query Cost Estimator.png",
   },
   {
     id: 11,
     name: "ConfPlus - 2",
     lang: ["React.js", "Prisma", "Next.js"],
-    desc: "optimizes the Conference Management System with Prisma, multi-authentication, and conference statistics reporting.",
+    desc: "Optimizes the Conference Management System with Prisma, multi-authentication, and conference stats reporting.",
+    route: "/projects/project_11",
     thumbnail: "thumbnails/ConfPlus - 2.png",
   },
   {
     id: 10,
     name: "ConfPlus",
     lang: ["HTML", "CSS", "Node.js", "Next.js"],
-    desc: "web-based Conference Management System for organizing academic events, allowing authors to submit papers, reviewers to evaluate them, and organizers to create and manage conference schedules.",
+    desc: "Web-based Conference Management System for academic events, with paper submission, review, and scheduling.",
+    route: "/projects/project_10",
     thumbnail: "thumbnails/ConfPlus.png",
   },
   {
     id: 9,
     name: "DNS FTP Server",
     lang: ["Java"],
-    desc: "Multithreaded Server/Client application implementing FTP and DNS services with authentication and logging.",
+    desc: "Multithreaded Server/Client app implementing FTP and DNS with authentication and logging.",
+    route: "/projects/project_9",
     thumbnail: "thumbnails/DNS FTP Server.png",
   },
   {
     id: 8,
     name: "System Admin",
     lang: ["C", "Linux"],
-    desc: "A set of C and Linux (Ubunto) shell scripts to manage system activities, including user access validation, network and system monitoring, permission changes, software installation, and file searches, while logging and handling errors.",
+    desc: "Set of C and Linux shell scripts for system tasks including user validation, network monitoring, and logging.",
+    route: "/projects/project_8",
     thumbnail: "thumbnails/System Admin.png",
   },
   {
     id: 7,
     name: "House Price Prediction",
     lang: ["Python"],
-    desc: "This Python ML project predicts house prices based on various features such as dwelling type, zoning, lot size, neighborhood, and overall quality of the house.",
+    desc: "Python ML project that predicts house prices based on features like lot size, zoning, and quality.",
+    route: "/projects/project_7",
     thumbnail: "thumbnails/House Price Prediction.png",
   },
   {
     id: 6,
     name: "Central Doha Waste (CDW) System",
     lang: ["Java", "JavaFX"],
-    desc: "Developed a comprehensive waste management system for Central Doha Waste (CDW) using Java and JavaFX, handling truck scheduling, driver management, customer information, and billing.",
+    desc: "Waste management system using JavaFX for truck scheduling, billing, and customer data.",
+    route: "/projects/project_6",
     thumbnail: "thumbnails/Central Doha Waste CDW System.png",
   },
   {
     id: 5,
     name: "Efficient Array Operations in Assembly: Copy & Multiply",
     lang: ["Java", "SQL", "JavaFX"],
-    desc: "An Assembly Language program that performs array operations, including copying elements and multiplying two arrays element-wise, optimizing performance at the low-level hardware level.",
+    desc: "Assembly program to perform optimized array copy and multiply operations.",
+    route: "/projects/project_5",
     thumbnail: "thumbnails/Efficient Array Operations in Assembly Copy and Multiply.png",
   },
   {
     id: 4,
     name: "Dr Online",
     lang: ["Java", "SQL", "JavaFX"],
-    desc: "A JavaFX-based application that integrates SQL database management to facilitate doctor-patient interactions. ",
+    desc: "Doctor-patient interaction app built with JavaFX and SQL for data handling.",
+    route: "/projects/project_4",
     thumbnail: "thumbnails/Dr Online.png",
   },
   {
     id: 3,
     name: "Student Records System",
     lang: ["Java"],
-    desc: "A Tree of Doubly Linked Lists-based student record system that optimizes insertion, deletion, and searching of students using their structured ID, with a user-friendly application for managing records efficiently.",
+    desc: "Uses Tree of Doubly Linked Lists to efficiently manage student records.",
+    route: "/projects/project_3",
     thumbnail: "thumbnails/Student Records System.png",
   },
   {
     id: 2,
     name: "Car Rental System",
-    lang: ["Java, JavaFX"],
-    desc: "A Java-based user interface for the FCars rental system, enabling users to manage customers, cars, and rentals through intuitive windows for adding, updating, and deleting records.",
+    lang: ["Java", "JavaFX"],
+    desc: "JavaFX UI to manage customers, cars, and rental records.",
+    route: "/projects/project_2",
     thumbnail: "thumbnails/Car Rental System.png",
   },
   {
     id: 1,
     name: "Covid 19 Tracking System",
     lang: ["C++"],
-    desc: "A C++-based COVID-19 tracking system that manages country records, allowing users to add, update, delete, search, and generate reports on confirmed cases and deaths.",
+    desc: "C++ COVID-19 tracker for managing and reporting country case data.",
+    route: "/projects/project_1",
     thumbnail: "thumbnails/Covid 19 Tracking System.png",
   },
 ];
 
 export default function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
 
   const filteredProjects = projects.filter((project) =>
     project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -156,7 +167,7 @@ export default function Projects() {
                 }}
               >
                 <h4>{p.name}</h4>
-                <button>Go</button>
+                <button onClick={() => router.push(p.route)}>Go</button>
               </div>
             ))
           ) : (
