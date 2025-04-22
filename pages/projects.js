@@ -86,7 +86,7 @@ const projects = [
   {
     id: 5,
     name: "Efficient Array Operations in Assembly: Copy & Multiply",
-    lang: ["Java", "SQL", "JavaFX"],
+    lang: ["Assembly"],
     desc: "Assembly program to perform optimized array copy and multiply operations.",
     route: "/projects/project_5",
     thumbnail: "thumbnails/Efficient Array Operations in Assembly Copy and Multiply.png",
